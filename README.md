@@ -1,8 +1,9 @@
 # Sub-real-time MiniMax H3 on Hopper
 
 A 14.375-second 768p video with native audio, generated in **13.506 s on 8×H100 80 GB** —
-0.939× of real time. The published state of the art for this model is Blackwell-only. It
-doesn't need to be, and **93% of the win came from outside the model.**
+0.939× of real time. Published H3 latency numbers are all Blackwell or all far slower than
+realtime; this fills in the missing Hopper data point, and **93% of the win came from
+outside the model.**
 
 | | |
 |---|---|
@@ -138,6 +139,12 @@ Hao AI Lab's [FastH3 preview](https://haoailab.com/blogs/fasth3-preview/) report
 on 8×B200 under the same protocol. **They are 4.9% faster than this work, on 2.3× the
 silicon per GPU**, with FlashAttention-4 and a sparse kernel that doesn't exist on Hopper.
 This is not a speedup over them and should never be cited as one.
+
+**They also do not claim Blackwell is required.** Their post says the weights are
+"hardware-independent and can run anywhere with enough memory and a compatible H3 runtime,"
+and that B200 is simply their controlled benchmark platform. So this is not a correction of
+anyone's claim — it is the Hopper measurement nobody had published, and it lands within 5%
+of theirs.
 
 ## License and scope
 
