@@ -1,0 +1,72 @@
+[
+ {
+  "config": {
+   "sparsity": 0.0,
+   "dense_first_n": 0,
+   "label": "BASE_H3_REFERENCE_49fwd"
+  },
+  "prompt_id": "parkour",
+  "tag": "BASE_H3_REFERENCE_49fwd__sp0_df0_parkour",
+  "frames": 345,
+  "steps": 50,
+  "sparsity": 0.0,
+  "lora": "",
+  "backend": "TORCH_SDPA",
+  "num_gpus": 8,
+  "video_path": "/outputs/BASE_H3_REFERENCE_49fwd__sp0_df0_parkour_r0/A traceur sprints across a rooftop and vaults a concrete ledge, tucking into a roll and rising into.mp4",
+  "generation_time_s": [
+   333.24197303100004
+  ],
+  "stages": {
+   "input_preparation_stage": 8.381300006021775e-05,
+   "conditioning_stage": 0.04287427500003105,
+   "latent_preparation_stage": 0.05414885199991204,
+   "denoising_stage": 329.648350627,
+   "video_decoding_stage": 2.5341659309999613,
+   "audio_decoding_stage": 0.115888416999951,
+   "PostDecodeFrameProcessStage": 0.2751556850000725,
+   "VideoSaveStage": 1.5890112419999696,
+   "AudioMuxStage": 0.0
+  },
+  "e2e_median_s": 335.1154983509999,
+  "e2e_all_s": [
+   335.1154983509999
+  ],
+  "realtime_factor": 23.312382493982604
+ },
+ {
+  "config": {
+   "sparsity": 0.0,
+   "dense_first_n": 0,
+   "label": "BASE_H3_REFERENCE_49fwd"
+  },
+  "prompt_id": "texture",
+  "tag": "BASE_H3_REFERENCE_49fwd__sp0_df0_texture",
+  "frames": 345,
+  "steps": 50,
+  "sparsity": 0.0,
+  "lora": "",
+  "backend": "TORCH_SDPA",
+  "num_gpus": 8,
+  "video_path": "/outputs/BASE_H3_REFERENCE_49fwd__sp0_df0_texture_r0/Macro shot of sunlight moving across a woven wool blanket as a cloud passes. Individual fibers and s.mp4",
+  "generation_time_s": [
+   394.990718021
+  ],
+  "stages": {
+   "input_preparation_stage": 8.52529999519902e-05,
+   "conditioning_stage": 0.04416108800000984,
+   "latent_preparation_stage": 0.07271505500011699,
+   "denoising_stage": 391.3783010320001,
+   "video_decoding_stage": 2.529704613999911,
+   "audio_decoding_stage": 0.11670882999987953,
+   "PostDecodeFrameProcessStage": 0.28327217100013513,
+   "VideoSaveStage": 1.631194652999966,
+   "AudioMuxStage": 0.0
+  },
+  "e2e_median_s": 396.91470106999986,
+  "e2e_all_s": [
+   396.91470106999986
+  ],
+  "realtime_factor": 27.61145746573912
+ }
+]

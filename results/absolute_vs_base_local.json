@@ -1,0 +1,26 @@
+{
+ "BASE H3 (49 fwd, dense)": {
+  "n_frames": 173,
+  "hf_energy": 65.491,
+  "temporal_flicker": 13.877,
+  "farneback_motion": 14.059
+ },
+ "vsa-datafree (shipped)": {
+  "n_frames": 173,
+  "hf_energy": 212.085,
+  "temporal_flicker": 21.074,
+  "farneback_motion": 16.953
+ },
+ "v3patch (datafree, FP8)": {
+  "n_frames": 173,
+  "hf_energy": 192.536,
+  "temporal_flicker": 19.067,
+  "farneback_motion": 13.212
+ },
+ "step1300 (deployed)": {
+  "n_frames": 173,
+  "hf_energy": 289.499,
+  "temporal_flicker": 24.638,
+  "farneback_motion": 18.423
+ }
+}

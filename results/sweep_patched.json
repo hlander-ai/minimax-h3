@@ -1,0 +1,113 @@
+[
+ {
+  "config": {
+   "sparsity": 0.9,
+   "dense_first_n": 0,
+   "label": "patched_full_fp8_sp90"
+  },
+  "prompt_id": "parkour",
+  "tag": "sp90_df0_parkour",
+  "frames": 345,
+  "steps": 5,
+  "sparsity": 0.9,
+  "lora": "",
+  "backend": "VIDEO_SPARSE_ATTN_H3",
+  "num_gpus": 8,
+  "video_path": "/outputs/sp90_df0_parkour_r1/A traceur sprints across a rooftop and vaults a concrete ledge, tucking into a roll and rising into_2.mp4",
+  "generation_time_s": [
+   13.537298217,
+   13.465020765999952
+  ],
+  "stages": {
+   "input_preparation_stage": 7.074499995951555e-05,
+   "conditioning_stage": 0.03755892600003108,
+   "latent_preparation_stage": 0.06846414199998208,
+   "denoising_stage": 8.680827821000037,
+   "video_decoding_stage": 2.2242565270000227,
+   "audio_decoding_stage": 0.11660218100001885,
+   "PostDecodeFrameProcessStage": 1.4958944069999802,
+   "VideoSaveStage": 1.6625767460000134,
+   "AudioMuxStage": 0.0
+  },
+  "e2e_median_s": 16.678642841,
+  "e2e_all_s": [
+   16.637458326,
+   16.678642841
+  ],
+  "realtime_factor": 1.1602534150260868
+ },
+ {
+  "config": {
+   "sparsity": 0.8,
+   "dense_first_n": 0,
+   "label": "patched_full_fp8_sp80"
+  },
+  "prompt_id": "parkour",
+  "tag": "sp80_df0_parkour",
+  "frames": 345,
+  "steps": 5,
+  "sparsity": 0.8,
+  "lora": "",
+  "backend": "VIDEO_SPARSE_ATTN_H3",
+  "num_gpus": 8,
+  "video_path": "/outputs/sp80_df0_parkour_r1/A traceur sprints across a rooftop and vaults a concrete ledge, tucking into a roll and rising into.mp4",
+  "generation_time_s": [
+   15.771302485999968,
+   15.710105666999993
+  ],
+  "stages": {
+   "input_preparation_stage": 6.0371000017767074e-05,
+   "conditioning_stage": 0.03555368700000372,
+   "latent_preparation_stage": 0.05238290599999118,
+   "denoising_stage": 10.943062220999991,
+   "video_decoding_stage": 2.2210808780000093,
+   "audio_decoding_stage": 0.11662610600001244,
+   "PostDecodeFrameProcessStage": 1.5326684739999905,
+   "VideoSaveStage": 1.6654565970000021,
+   "AudioMuxStage": 0.0
+  },
+  "e2e_median_s": 18.93819674399998,
+  "e2e_all_s": [
+   18.920775124999977,
+   18.93819674399998
+  ],
+  "realtime_factor": 1.317439773495651
+ },
+ {
+  "config": {
+   "sparsity": 0.7,
+   "dense_first_n": 0,
+   "label": "patched_full_fp8_sp70"
+  },
+  "prompt_id": "parkour",
+  "tag": "sp70_df0_parkour",
+  "frames": 345,
+  "steps": 5,
+  "sparsity": 0.7,
+  "lora": "",
+  "backend": "VIDEO_SPARSE_ATTN_H3",
+  "num_gpus": 8,
+  "video_path": "/outputs/sp70_df0_parkour_r1/A traceur sprints across a rooftop and vaults a concrete ledge, tucking into a roll and rising into.mp4",
+  "generation_time_s": [
+   17.967803532000005,
+   18.131580504999988
+  ],
+  "stages": {
+   "input_preparation_stage": 6.376400000362992e-05,
+   "conditioning_stage": 0.03659094400001095,
+   "latent_preparation_stage": 0.0597439019999797,
+   "denoising_stage": 13.169839049000018,
+   "video_decoding_stage": 2.2191380799999934,
+   "audio_decoding_stage": 0.11636906500001487,
+   "PostDecodeFrameProcessStage": 1.5235154750000106,
+   "VideoSaveStage": 1.684185895999974,
+   "AudioMuxStage": 0.0
+  },
+  "e2e_median_s": 21.352627345999963,
+  "e2e_all_s": [
+   21.214339101999997,
+   21.352627345999963
+  ],
+  "realtime_factor": 1.4854001631999973
+ }
+]

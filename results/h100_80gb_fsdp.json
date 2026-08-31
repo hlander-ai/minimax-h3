@@ -1,0 +1,25 @@
+[
+ {
+  "config": {
+   "sparsity": 0.9,
+   "dense_first_n": 0,
+   "label": "H100_80GB_SAFE_syn1300"
+  },
+  "prompt_id": "parkour",
+  "tag": "H100_80GB_SAFE_syn1300__sp90_df0_parkour",
+  "hardware": {
+   "name": "NVIDIA H100 80GB HBM3",
+   "hbm_gb": 85.0,
+   "capability": "9.0",
+   "count": 8
+  },
+  "frames": 345,
+  "steps": 5,
+  "sparsity": 0.9,
+  "lora": "",
+  "backend": "VIDEO_SPARSE_ATTN_H3",
+  "num_gpus": 8,
+  "warmup_error": "Forward execution thread failed.\nTraceback (most recent call last):\n  File \"/opt/FastVideo/fastvideo/entrypoints/video_generator.py\", line 796, in execute_forward_thread\n    result_container[\"output_batch\"] = self.executor.execute_forward(batch, fastvideo_args)\n                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/FastVideo/fastvideo/worker/multiproc_executor.py\", line 135, in execute_forward\n    responses = self.collective_rpc(\"execute_forward\"",
+  "error": "Forward execution thread failed.\nTraceback (most recent call last):\n  File \"/opt/FastVideo/fastvideo/entrypoints/video_generator.py\", line 796, in execute_forward_thread\n    result_container[\"output_batch\"] = self.executor.execute_forward(batch, fastvideo_args)\n                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/FastVideo/fastvideo/worker/multiproc_executor.py\", line 135, in execute_forward\n    responses = self.collective_rpc(\"execute_forward\",\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/FastVideo/fastvideo/worker/multiproc_executor.py\", line 311, in collective_rpc\n    raise e\n  File \"/opt/FastVideo/fastvideo/worker/multiproc_executor.py\", line 298, in collective_rpc\n    _raise_for_rpc_errors(method, responses)\n  File \"/opt/FastVideo/fastvideo/worker/multiproc_executor.py\", line 46, in _raise_for_rpc_errors\n    "
+ }
+]

@@ -1,0 +1,262 @@
+{
+  "suite": "h3-quality-v1",
+  "version": 1,
+  "target": {
+    "resolution": "1344x768",
+    "fps": 24,
+    "duration_s": 14.375,
+    "frames": 345
+  },
+  "design_notes": [
+    "Each prompt is DIAGNOSTIC: it isolates one or two failure modes so a regression is attributable.",
+    "'stresses' lists the axes the prompt probes. 'failure_signature' says what degradation looks like here.",
+    "tier=core is the fast iteration set. tier=full adds coverage for final/gate decisions.",
+    "Few-step distillation characteristically destroys MOTION MAGNITUDE first (videos go slow-mo/static),",
+    "then fine texture, then identity stability. Static-control prompts exist to separate 'model got worse'",
+    "from 'model got less dynamic', which same-seed reference metrics otherwise confuse.",
+    "Sparse attention characteristically degrades LONG-RANGE spatial coherence and object permanence",
+    "across occlusion, which is why several prompts force an object to leave and re-enter frame."
+  ],
+  "prompts": [
+    {
+      "id": "face_closeup_dialogue",
+      "tier": "core",
+      "text": "Extreme close-up of a woman in her thirties with freckles and short auburn hair, speaking directly to camera in a quiet apartment at golden hour. She says, clearly and warmly, \"I didn't think you'd actually come.\" Soft window light rakes across her face, catching the fine hairs at her temple. Shallow depth of field, 85mm lens, subtle handheld drift.",
+      "stresses": ["faces", "identity_stability", "lip_sync", "dialogue", "difficult_lighting", "photorealism", "shallow_dof"],
+      "failure_signature": "Identity drifts across frames; mouth shapes desync from phonemes; freckles smear into skin; bokeh boils.",
+      "audio": "speech"
+    },
+    {
+      "id": "hands_pottery",
+      "tier": "core",
+      "text": "Overhead shot of a potter's hands centering wet clay on a spinning wheel. Ten fingers clearly visible, slick with slip, pressing and shaping the rising cylinder. Clay spatters. Warm studio light from the left. The wheel hums steadily beneath.",
+      "stresses": ["hands", "finger_count", "fine_texture", "physics_deformable", "continuous_contact"],
+      "failure_signature": "Finger count changes; fingers fuse or pass through clay; clay surface loses wet specular detail.",
+      "audio": "sfx"
+    },
+    {
+      "id": "parkour_fast_motion",
+      "tier": "core",
+      "text": "A traceur sprints across a rooftop and vaults a concrete ledge, tucking into a roll and rising into a run. Fast tracking shot follows alongside. Late afternoon sun, long shadows, dust kicked up on landing, city skyline behind.",
+      "stresses": ["fast_motion", "motion_magnitude", "articulated_body", "camera_tracking", "motion_blur"],
+      "failure_signature": "Motion collapses to slow-motion or a near-static pose; limbs ghost or duplicate; body loses articulation mid-vault.",
+      "audio": "sfx"
+    },
+    {
+      "id": "slow_tea_pour",
+      "tier": "core",
+      "text": "Locked-off macro shot of amber tea pouring slowly from a cast-iron teapot into a small ceramic cup. Steam curls upward. The liquid surface rises and settles. Dim window light, dark background.",
+      "stresses": ["slow_motion", "fluid_physics", "static_camera_control", "fine_texture", "steam_wisps"],
+      "failure_signature": "Stream breaks or floats; liquid level fails to rise monotonically; steam becomes static noise.",
+      "audio": "sfx"
+    },
+    {
+      "id": "occlusion_permanence",
+      "tier": "core",
+      "text": "A red enamel mug sits on a wooden table. A person in a grey sweater walks between the camera and the table, fully hiding the mug for about a second, then continues out of frame, revealing the mug exactly where it was. Static camera, even daylight.",
+      "stresses": ["object_permanence", "occlusion", "long_range_temporal_memory", "static_camera_control"],
+      "failure_signature": "Mug moves, changes color, multiplies, or vanishes after the occluder passes. This is THE sparse-attention canary.",
+      "audio": "ambient"
+    },
+    {
+      "id": "orbit_camera_statue",
+      "tier": "core",
+      "text": "Smooth 180-degree orbital camera move around a weathered bronze statue of a horse in an empty plaza at dawn. Consistent geometry as the viewpoint changes, patina and verdigris detail on the bronze, cobblestones underfoot, mist near the ground.",
+      "stresses": ["camera_movement", "3d_consistency", "geometry_stability", "fine_texture"],
+      "failure_signature": "Statue geometry morphs as the camera orbits; the horse gains or loses legs; plaza background swims.",
+      "audio": "ambient"
+    },
+    {
+      "id": "two_person_interaction",
+      "tier": "core",
+      "text": "Two chefs in a busy kitchen work opposite each other at a steel counter. One slides a plate across to the other, who catches it and adds a garnish. They exchange a quick nod. Handheld medium shot, steam and warm overhead lights, background cooks moving.",
+      "stresses": ["multi_subject", "subject_interaction", "object_handoff", "identity_separation", "busy_background"],
+      "failure_signature": "Identities swap or blend; the plate teleports rather than transfers; background crowd churns into mush.",
+      "audio": "ambient"
+    },
+    {
+      "id": "physics_dominoes",
+      "tier": "core",
+      "text": "A curving line of black dominoes topples in sequence across a white tabletop, each tile striking the next with a crisp click. Low camera angle near the table surface, shallow depth of field pulling focus along the line.",
+      "stresses": ["physics_rigid_body", "causal_sequence", "temporal_ordering", "audio_sync_impact"],
+      "failure_signature": "Dominoes fall out of order, simultaneously, or spontaneously; clicks desync from contacts.",
+      "audio": "sfx"
+    },
+    {
+      "id": "text_rendering_sign",
+      "tier": "core",
+      "text": "A hand-painted wooden shop sign reading \"HARBOR & OAK\" hangs above a storefront, swinging gently in the wind. Slow dolly-in toward the sign. Overcast light, weathered gold lettering on deep green paint.",
+      "stresses": ["text_rendering", "text_stability", "fine_texture", "slow_camera_move"],
+      "failure_signature": "Letters mutate frame to frame, reorder, or degrade into pseudo-glyphs as the dolly progresses.",
+      "audio": "ambient"
+    },
+    {
+      "id": "fine_texture_fabric",
+      "tier": "core",
+      "text": "Macro shot of sunlight moving across a woven wool blanket as a cloud passes. Individual fibers and slubs visible, the weave pattern crisp, subtle color shift from warm to cool and back.",
+      "stresses": ["fine_texture", "high_frequency_detail", "lighting_transition", "minimal_motion"],
+      "failure_signature": "Weave detail dissolves into smooth blur — the classic signature of over-aggressive step reduction.",
+      "audio": "ambient"
+    },
+    {
+      "id": "multishot_transition",
+      "tier": "core",
+      "text": "Shot one: a wide establishing view of a rain-soaked neon street at night, reflections on wet asphalt. Hard cut. Shot two: interior close-up of the same street seen through a diner window, rain running down the glass, a coffee cup steaming on the sill. Shot three: hard cut to a slow tilt up the neon sign outside.",
+      "stresses": ["multi_shot", "scene_transition", "shot_boundary_respect", "scene_consistency_across_cuts", "difficult_lighting"],
+      "failure_signature": "Cuts are ignored (one continuous shot) or dissolve rather than cut; the street's identity changes across shots.",
+      "audio": "ambient"
+    },
+    {
+      "id": "long_compositional",
+      "tier": "core",
+      "text": "In a sunlit greenhouse with a glass roof, an elderly botanist wearing round wire-rimmed glasses and a faded blue apron kneels beside a row of terracotta pots on the left, gently repotting a small fern. Behind her on the right, a tabby cat sleeps on a wooden stool beneath hanging baskets of trailing ivy. A watering can sits between them on the brick floor. Dust motes drift through shafts of light. The camera slowly pushes in from the doorway, keeping both the botanist and the cat in frame.",
+      "stresses": ["long_prompt", "compositionality", "spatial_relations", "attribute_binding", "multi_subject", "counting", "camera_movement"],
+      "failure_signature": "Left/right relations invert; apron color or glasses shape drift; cat or watering can omitted; only one subject survives the push-in.",
+      "audio": "ambient"
+    },
+    {
+      "id": "animation_2d",
+      "tier": "core",
+      "text": "Hand-drawn 2D animation in a Studio Ghibli style: a young girl in a yellow raincoat runs down a hillside path through tall grass, her coat flapping, clouds scudding overhead. Painterly backgrounds, visible brushwork, animated on twos.",
+      "stresses": ["animation_style", "style_adherence", "non_photoreal", "motion_magnitude", "style_consistency"],
+      "failure_signature": "Style drifts toward photorealism or 3D render; linework flickers; frame rate feel becomes uncanny.",
+      "audio": "ambient"
+    },
+    {
+      "id": "difficult_lighting_candle",
+      "tier": "core",
+      "text": "A single candle flame lights a man's face in an otherwise dark room. He turns his head slowly toward the flame. Deep shadows, strong falloff, flickering warm highlights on his cheekbone and the bridge of his nose, faint smoke rising.",
+      "stresses": ["difficult_lighting", "low_light", "high_dynamic_range", "faces", "flicker_coherence"],
+      "failure_signature": "Flame flicker becomes incoherent noise; shadow regions band or crawl; face detail lost to the dark.",
+      "audio": "ambient"
+    },
+    {
+      "id": "water_splash_physics",
+      "tier": "core",
+      "text": "High-speed shot of a ripe strawberry dropping into a glass of sparkling water. The impact throws up a crown of droplets, bubbles stream off the fruit as it sinks and settles. Bright backlight through the glass, white background.",
+      "stresses": ["fluid_physics", "fast_motion", "fine_detail_droplets", "transparency", "refraction"],
+      "failure_signature": "Droplets smear into a blob; bubbles are static; refraction through the glass is inconsistent.",
+      "audio": "sfx"
+    },
+    {
+      "id": "static_control_landscape",
+      "tier": "core",
+      "text": "A locked-off wide shot of a still mountain lake at first light. Almost no motion: the water is glassy, a thin mist sits on the surface, the peaks are reflected. Only the mist drifts slowly and the reflection ripples faintly.",
+      "stresses": ["static_control", "minimal_motion", "aesthetics", "temporal_stability", "wide_dynamic_range"],
+      "failure_signature": "CONTROL PROMPT: should look near-identical across configs. If this degrades, the degradation is not about motion.",
+      "audio": "ambient"
+    },
+    {
+      "id": "crowd_scene_density",
+      "tier": "full",
+      "text": "A busy Tokyo crossing at dusk seen from a second-floor window. Hundreds of pedestrians flow in two directions, umbrellas open in light rain, neon signs reflecting on the wet crosswalk. Static wide shot.",
+      "stresses": ["crowd_density", "many_small_subjects", "long_range_spatial_coherence", "difficult_lighting"],
+      "failure_signature": "Pedestrians merge, pop in and out, or walk through each other; the crossing loses its grid structure.",
+      "audio": "ambient"
+    },
+    {
+      "id": "lipsync_singing",
+      "tier": "full",
+      "text": "Medium close-up of a young man singing into a vintage ribbon microphone in a dim recording booth, eyes closed, holding a sustained note then breaking into a phrase. Headphones on, warm key light from above, subtle head movement with the phrasing.",
+      "stresses": ["lip_sync", "audio_video_sync", "sustained_vowel_shapes", "faces", "difficult_lighting"],
+      "failure_signature": "Mouth aperture uncorrelated with the sung audio; jaw motion periodic rather than phonetic.",
+      "audio": "speech"
+    },
+    {
+      "id": "sfx_sync_percussion",
+      "tier": "full",
+      "text": "A drummer plays a tight snare and hi-hat pattern, sticks clearly striking each surface. Close side angle on the kit, cymbals shimmering, drum heads visibly rebounding on each hit. Stage lighting from behind.",
+      "stresses": ["audio_sync_impact", "fast_motion", "periodic_motion", "audio_quality", "temporal_precision"],
+      "failure_signature": "Stick contact and drum hit audio drift apart; strikes land on the wrong surface; sticks ghost.",
+      "audio": "sfx"
+    },
+    {
+      "id": "reveal_camera_whip",
+      "tier": "full",
+      "text": "A fast whip pan from an empty desert horizon to reveal a lone weathered gas station with a rusted sign. Heavy motion blur through the pan, settling to a stable framing on the station. Harsh midday sun.",
+      "stresses": ["fast_camera_motion", "motion_blur", "reveal", "settle_stability"],
+      "failure_signature": "Pan does not settle; the station morphs while stabilizing; blur becomes smear artifacts.",
+      "audio": "ambient"
+    },
+    {
+      "id": "reflection_mirror",
+      "tier": "full",
+      "text": "A woman applies lipstick in front of a bathroom mirror. The camera sees both her and her reflection. Her reflected movements match her real movements exactly. Cool fluorescent light, tiled wall.",
+      "stresses": ["reflection_consistency", "spatial_reasoning", "faces", "identity_consistency_across_instances"],
+      "failure_signature": "Reflection desyncs, shows a different face, or moves independently. A strong test of long-range attention.",
+      "audio": "ambient"
+    },
+    {
+      "id": "small_text_screen",
+      "tier": "full",
+      "text": "Over-the-shoulder shot of a laptop screen displaying a terminal window with green monospace text scrolling upward. The room is dark, the screen is the only light source, illuminating the typist's hands on the keyboard.",
+      "stresses": ["text_rendering", "small_text", "scrolling_content", "difficult_lighting", "hands"],
+      "failure_signature": "Text is pseudo-glyph mush; scrolling is non-uniform; screen glow doesn't match hand illumination.",
+      "audio": "sfx"
+    },
+    {
+      "id": "seasonal_transition",
+      "tier": "full",
+      "text": "A single oak tree in a field transitions through seasons in one continuous shot: green summer leaves turn gold, fall away, snow accumulates on bare branches, then buds return. Locked-off wide shot, time-lapse feel with drifting clouds.",
+      "stresses": ["scene_transition", "long_range_temporal_structure", "gradual_change", "narrative_progression"],
+      "failure_signature": "Transitions happen abruptly, loop, or never progress; the tree's trunk geometry changes across seasons.",
+      "audio": "ambient"
+    },
+    {
+      "id": "specular_metal",
+      "tier": "full",
+      "text": "A chrome ball bearing rolls slowly across a dark slate surface under a single moving light source. Sharp specular highlights track across its surface, reflecting the surrounding room in miniature.",
+      "stresses": ["specular_highlights", "reflection_consistency", "slow_motion", "material_realism"],
+      "failure_signature": "Highlights flicker or fail to track the light; reflections are static texture rather than view-dependent.",
+      "audio": "ambient"
+    },
+    {
+      "id": "aerial_landscape",
+      "tier": "full",
+      "text": "Aerial drone shot flying low and fast over an autumn forest canopy toward a distant waterfall, the camera rising to reveal the valley beyond. Crisp fall colors, morning haze in the valley, continuous forward motion.",
+      "stresses": ["camera_movement", "fast_camera_motion", "parallax", "large_scale_structure", "aesthetics"],
+      "failure_signature": "Parallax is wrong (flat card motion); the waterfall never resolves; canopy detail dissolves at speed.",
+      "audio": "ambient"
+    },
+    {
+      "id": "counting_objects",
+      "tier": "full",
+      "text": "Exactly five yellow rubber ducks float in a row in a blue plastic tub of water. A hand enters frame and removes the middle duck, leaving four. Static overhead shot, even light.",
+      "stresses": ["counting", "prompt_adherence_precise", "object_permanence", "hands", "instruction_following"],
+      "failure_signature": "Duck count wrong at start or after removal; ducks reappear; hand removes the wrong one.",
+      "audio": "sfx"
+    },
+    {
+      "id": "negation_and_style",
+      "tier": "full",
+      "text": "A vintage 16mm film look: a red bicycle leans against a stone wall in a narrow European alley. No people are present anywhere in the shot. Visible film grain, slight gate weave, muted color palette, static camera.",
+      "stresses": ["negation", "style_adherence", "film_emulation", "grain_texture", "prompt_adherence"],
+      "failure_signature": "People appear despite negation; grain becomes digital noise or is denoised away entirely by few-step sampling.",
+      "audio": "ambient"
+    },
+    {
+      "id": "deformable_cloth",
+      "tier": "full",
+      "text": "A long silk scarf is tossed into the air in slow motion and falls, rippling and folding, catching the light. Dark background, single strong side light picking out the folds.",
+      "stresses": ["deformable_physics", "cloth_simulation", "slow_motion", "self_occlusion", "specular_sheen"],
+      "failure_signature": "Cloth self-intersects, freezes mid-air, or folds implausibly; sheen doesn't follow the surface normal.",
+      "audio": "ambient"
+    },
+    {
+      "id": "animal_gait",
+      "tier": "full",
+      "text": "A golden retriever runs directly toward the camera across a grassy park, ears flapping, tongue out, a natural four-beat gallop. Low camera near the grass, shallow depth of field, late-day backlight.",
+      "stresses": ["animal_anatomy", "gait_correctness", "fast_motion", "approaching_subject", "scale_change"],
+      "failure_signature": "Gait is impossible (legs move out of phase); the dog's scale change doesn't match its approach speed.",
+      "audio": "ambient"
+    },
+    {
+      "id": "abstract_compositional_hard",
+      "tier": "full",
+      "text": "A blue cube sits on top of a red sphere, which rests on a green cylinder, on a white studio backdrop. The camera arcs slowly to the right. Soft even studio lighting, subtle contact shadows, no other objects.",
+      "stresses": ["attribute_binding", "spatial_relations", "compositionality", "3d_consistency", "camera_movement"],
+      "failure_signature": "Colors bind to the wrong shapes; the stack order changes; objects interpenetrate or float.",
+      "audio": "none"
+    }
+  ]
+}

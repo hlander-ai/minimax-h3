@@ -1,0 +1,44 @@
+[
+ {
+  "config": {
+   "sparsity": 0.9,
+   "dense_first_n": 0,
+   "label": "H100_FP8TE_RESIDENT"
+  },
+  "prompt_id": "parkour",
+  "tag": "H100_FP8TE_RESIDENT__sp90_df0_parkour",
+  "hardware": {
+   "name": "NVIDIA H100 80GB HBM3",
+   "hbm_gb": 85.0,
+   "capability": "9.0",
+   "count": 8
+  },
+  "frames": 345,
+  "steps": 5,
+  "sparsity": 0.9,
+  "lora": "",
+  "backend": "VIDEO_SPARSE_ATTN_H3",
+  "num_gpus": 8,
+  "generation_time_s": [
+   13.232351606000009,
+   13.226961973000016,
+   13.274167707999993
+  ],
+  "stages": {
+   "input_preparation_stage": 4.98359999596687e-05,
+   "conditioning_stage": 0.18039485100001684,
+   "latent_preparation_stage": 0.10890404399998488,
+   "denoising_stage": 9.287956115999975,
+   "video_decoding_stage": 3.561140378999994,
+   "audio_decoding_stage": 0.1251569350000068,
+   "PostDecodeFrameProcessStage": 1.2919999790028669e-06
+  },
+  "e2e_median_s": 13.505661057999987,
+  "e2e_all_s": [
+   13.503024472999982,
+   13.505661057999987,
+   13.553856203999999
+  ],
+  "realtime_factor": 0.9395242475130425
+ }
+]

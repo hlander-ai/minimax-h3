@@ -1,0 +1,72 @@
+[
+ {
+  "config": {
+   "sparsity": 0.9,
+   "dense_first_n": 0,
+   "label": "adapter_vsa-synthetic-step1300"
+  },
+  "prompt_id": "parkour",
+  "tag": "adapter_vsa-synthetic-step1300__sp90_df0_parkour",
+  "frames": 345,
+  "steps": 5,
+  "sparsity": 0.9,
+  "lora": "vsa-synthetic-step1300",
+  "backend": "VIDEO_SPARSE_ATTN_H3",
+  "num_gpus": 8,
+  "video_path": "/outputs/adapter_vsa-synthetic-step1300__sp90_df0_parkour_r0/A traceur sprints across a rooftop and vaults a concrete ledge, tucking into a roll and rising into.mp4",
+  "generation_time_s": [
+   12.753381896999997
+  ],
+  "stages": {
+   "input_preparation_stage": 8.34869999835064e-05,
+   "conditioning_stage": 0.041913084000043455,
+   "latent_preparation_stage": 0.081941689999951,
+   "denoising_stage": 9.530961497000021,
+   "video_decoding_stage": 2.3628037589999735,
+   "audio_decoding_stage": 0.11791285800001106,
+   "PostDecodeFrameProcessStage": 0.11111024100000577,
+   "VideoSaveStage": 1.76481351700005,
+   "AudioMuxStage": 0.0
+  },
+  "e2e_median_s": 14.63721683700004,
+  "e2e_all_s": [
+   14.63721683700004
+  ],
+  "realtime_factor": 1.018241171269568
+ },
+ {
+  "config": {
+   "sparsity": 0.9,
+   "dense_first_n": 0,
+   "label": "adapter_vsa-synthetic-step1300"
+  },
+  "prompt_id": "texture",
+  "tag": "adapter_vsa-synthetic-step1300__sp90_df0_texture",
+  "frames": 345,
+  "steps": 5,
+  "sparsity": 0.9,
+  "lora": "vsa-synthetic-step1300",
+  "backend": "VIDEO_SPARSE_ATTN_H3",
+  "num_gpus": 8,
+  "video_path": "/outputs/adapter_vsa-synthetic-step1300__sp90_df0_texture_r0/Macro shot of sunlight moving across a woven wool blanket as a cloud passes. Individual fibers and s.mp4",
+  "generation_time_s": [
+   14.289920883000036
+  ],
+  "stages": {
+   "input_preparation_stage": 8.85889999722167e-05,
+   "conditioning_stage": 0.044063652000033926,
+   "latent_preparation_stage": 0.09966731399998707,
+   "denoising_stage": 11.071345199999996,
+   "video_decoding_stage": 2.3658358380000095,
+   "audio_decoding_stage": 0.1181724299999587,
+   "PostDecodeFrameProcessStage": 0.10989371599998776,
+   "VideoSaveStage": 1.8837676450000345,
+   "AudioMuxStage": 0.0
+  },
+  "e2e_median_s": 16.291095718000008,
+  "e2e_all_s": [
+   16.291095718000008
+  ],
+  "realtime_factor": 1.133293615165218
+ }
+]

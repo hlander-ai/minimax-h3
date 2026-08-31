@@ -1,0 +1,42 @@
+# --- Never publish: generated media (Outputs of a territory-restricted model) ---
+# and internal docs / logs
+*.mp4
+*.jpg
+*.jpeg
+*.png
+*.webm
+docs/
+*.md
+!README.md
+results/videos/
+**/report-assets/
+
+# --- Never publish: serving / billing infrastructure ---
+# serving proxy, web app, deploy + billing ops -- never part of this repo
+*-api/
+web/
+modal/*_serve.py
+scripts/cost.sh
+scripts/stop_all.sh
+scripts/*showcase*.py
+
+# --- Never publish: credentials & deploy state ---
+.env
+.env.*
+.vercel/
+.modal.toml
+*_token
+*_key
+*.pem
+*.key
+
+# --- Local ---
+__pycache__/
+*.pyc
+.venv*/
+outputs/
+.claude/
+.DS_Store
+
+# generated locally by bench/record.py; not published
+experiments.jsonl

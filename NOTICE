@@ -1,0 +1,17 @@
+This project contains modifications to FastVideo (https://github.com/hao-ai-lab/FastVideo),
+Copyright the FastVideo authors, licensed under the Apache License 2.0.
+
+The files in patches/ are runtime patches against FastVideo's inference pipeline. They
+contain no model weights and no model outputs.
+
+NOT INCLUDED IN THIS REPOSITORY
+-------------------------------
+Model weights and generated media are deliberately absent. MiniMax H3 and its derivatives
+(including FastVideo's FastH3 checkpoints, which declare base_model MiniMaxAI/MiniMax-H3
+and license_name minimax-h3-community) are distributed under a license whose grant
+excludes several territories -- per its Section I.5, the European Union, the United
+Kingdom, the Republic of Korea and the United States of America -- and whose Section V.4
+extends that restriction to "Outputs or results".
+
+This repository therefore ships measurements, code and analysis only. Reproduce the
+artifacts yourself, subject to that license and your own jurisdiction.

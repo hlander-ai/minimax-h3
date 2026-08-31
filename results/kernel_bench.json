@@ -1,0 +1,104 @@
+{
+ "device": "NVIDIA H100 80GB HBM3",
+ "capability": "9.0",
+ "availability": {
+  "fastvideo_kernel": true,
+  "dir": [
+   "FastLayerNorm",
+   "FastRMSNorm",
+   "Int8Linear",
+   "VSA_TILE_SIZE",
+   "block_sparse_attn",
+   "block_sparse_attn_256",
+   "block_sparse_attn_from_indices",
+   "block_sparse_attn_varlen",
+   "build_vsa_metadata",
+   "construct_variable_block_sizes",
+   "get_non_pad_index",
+   "get_reverse_tile_partition_indices",
+   "get_tile_partition_indices",
+   "int8_linear",
+   "int8_quant",
+   "moba_attn_varlen",
+   "ops",
+   "process_moba_input",
+   "process_moba_output",
+   "sliding_tile_attention",
+   "triton_kernels",
+   "turbodiffusion_ops",
+   "version",
+   "video_sparse_attn",
+   "video_sparse_attn_bshd",
+   "vmoba",
+   "vsa_utils"
+  ],
+  "ops_symbols": "import failed: No module named 'fastvideo_kernel_ops'",
+  "_is_sm90": true,
+  "sm90_fwd_available": false,
+  "sm90_bwd_available": false
+ },
+ "build_log_tail": "ops.cpython-312-x86_64-linux-gnu.so\n  -- Set non-toolchain portion of runtime path of \"/tmp/tmpl2s0xmeu/wheel/platlib/fastvideo_kernel/_C/fastvideo_kernel_ops.cpython-312-x86_64-linux-gnu.so\" to \"\"\n  *** Making wheel...\n  *** Created fastvideo_kernel-0.3.5-cp312-cp312-linux_x86_64.whl\n  Building wheel for fastvideo-kernel (pyproject.toml): finished with status 'done'\n  Created wheel for fastvideo-kernel: filename=fastvideo_kernel-0.3.5-cp312-cp312-linux_x86_64.whl size=1269869 sha256=39288d050689631aca1895f619784f6e2709773bdf3f7ee43ecb6fa20b826328\n  Stored in directory: /tmp/pip-ephem-wheel-cache-eivvoej_/wheels/e6/2f/9e/070b9392dc265c5d9e5bcd321202e2083d4cb3b1dcdcdc8236\nSuccessfully built fastvideo-kernel\nInstalling collected packages: nvidia-cusparselt-cu13, cuda-toolkit, triton, nvidia-nvtx, nvidia-nvshmem-cu13, nvidia-nvjitlink, nvidia-nccl-cu13, nvidia-curand, nvidia-cufile, nvidia-cuda-runtime, nvidia-cuda-nvrtc, nvidia-cuda-cupti, cuda-pathfinder, nvidia-cusparse, nvidia-cufft, nvidia-cublas, cuda-bindings, nvidia-cusolver, nvidia-cudnn-cu13, torch, fastvideo-kernel\n  Attempting uninstall: triton\n    Found existing installation: triton 3.4.0\n    Uninstalling triton-3.4.0:\n      Removing file or directory /usr/local/bin/proton\n      Removing file or directory /usr/local/bin/proton-viewer\n      Removing file or directory /usr/local/lib/python3.12/site-packages/triton-3.4.0.dist-info/\n      Removing file or directory /usr/local/lib/python3.12/site-packages/triton/\n      Successfully uninstalled triton-3.4.0\n  changing mode of /usr/local/bin/proton to 755\n  changing mode of /usr/local/bin/proton-viewer to 755\n  Attempting uninstall: torch\n    Found existing installation: torch 2.8.0+cu128\n    Uninstalling torch-2.8.0+cu128:\n      Removing file or directory /usr/local/bin/torchfrtrace\n      Removing file or directory /usr/local/bin/torchrun\n      Removing file or directory /usr/local/lib/python3.12/site-packages/functorch/\n      Removing file or directory /usr/local/lib/python3.12/site-packages/torch-2.8.0+cu128.dist-info/\n      Removing file or directory /usr/local/lib/python3.12/site-packages/torch/\n      Removing file or directory /usr/local/lib/python3.12/site-packages/torchgen/\n      Successfully uninstalled torch-2.8.0+cu128\n  changing mode of /usr/local/bin/torchfrtrace to 755\n  changing mode of /usr/local/bin/torchrun to 755\n\nSuccessfully installed cuda-bindings-13.3.1 cuda-pathfinder-1.8.0 cuda-toolkit-13.0.2 fastvideo-kernel-0.3.5 nvidia-cublas-13.1.1.3 nvidia-cuda-cupti-13.0.85 nvidia-cuda-nvrtc-13.0.88 nvidia-cuda-runtime-13.0.96 nvidia-cudnn-cu13-9.20.0.48 nvidia-cufft-12.0.0.61 nvidia-cufile-1.15.1.6 nvidia-curand-<private-ip> nvidia-cusolver-12.0.4.66 nvidia-cusparse-12.6.3.3 nvidia-cusparselt-cu13-0.8.1 nvidia-nccl-cu13-2.29.7 nvidia-nvjitlink-13.0.88 nvidia-nvshmem-cu13-3.4.5 nvidia-nvtx-13.0.85 torch-2.12.0 triton-3.7.0\n\n[notice] A new release of pip is available: 25.2 -> 26.2.1\n[notice] To update, run: pip install --upgrade pip\n",
+ "build_mentions_h100_kernel": true,
+ "results": [
+  {
+   "method": "sdpa_flash",
+   "sparsity": 0.0,
+   "ms": 78.9281819999994,
+   "tflops": 373.7162518908674
+  },
+  {
+   "method": "sdpa_cudnn",
+   "sparsity": 0.0,
+   "ms": 49.411702000000446,
+   "tflops": 596.9586788489846
+  },
+  {
+   "method": "tk_sm90",
+   "sparsity": 0.0,
+   "error": "sm90 ops not built"
+  },
+  {
+   "method": "tk_sm90",
+   "sparsity": 0.25,
+   "error": "sm90 ops not built"
+  },
+  {
+   "method": "tk_sm90",
+   "sparsity": 0.5,
+   "error": "sm90 ops not built"
+  },
+  {
+   "method": "tk_sm90",
+   "sparsity": 0.7,
+   "error": "sm90 ops not built"
+  },
+  {
+   "method": "tk_sm90",
+   "sparsity": 0.8,
+   "error": "sm90 ops not built"
+  },
+  {
+   "method": "tk_sm90",
+   "sparsity": 0.9,
+   "error": "sm90 ops not built"
+  },
+  {
+   "method": "triton_bs",
+   "sparsity": 0.5,
+   "ms": 41.711865999999986,
+   "eff_tflops": 353.5773770657972
+  },
+  {
+   "method": "triton_bs",
+   "sparsity": 0.8,
+   "ms": 17.004939999999635,
+   "eff_tflops": 346.91971092636174
+  },
+  {
+   "method": "triton_bs",
+   "sparsity": 0.9,
+   "ms": 8.089857999998173,
+   "eff_tflops": 364.61387017678993
+  }
+ ]
+}

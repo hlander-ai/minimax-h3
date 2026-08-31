@@ -1,0 +1,297 @@
+[
+ {
+  "prompt_id": "pvar2_prompt_dance",
+  "frames": 345,
+  "steps": 5,
+  "backend": "VIDEO_SPARSE_ATTN_H3",
+  "sparsity": 0.9,
+  "lora": "",
+  "num_gpus": 8,
+  "compile_regional": true,
+  "sdpa_kernel": "default",
+  "quant": "bf16",
+  "te_quant": "bf16",
+  "model_path": "/weights/fasth3-syn1300-full",
+  "hardware": {
+   "name": "NVIDIA H200",
+   "hbm_gb": 150.1,
+   "capability": "9.0",
+   "count": 8
+  },
+  "offload_te": false,
+  "offload_vae": false,
+  "fsdp": true,
+  "load_s": 159.2005136013031,
+  "env": {
+   "FASTVIDEO_ATTENTION_BACKEND": "VIDEO_SPARSE_ATTN_H3",
+   "FASTVIDEO_VSA_SM100A": "0",
+   "FASTVIDEO_VSA_CUTEDSL": "0",
+   "FASTVIDEO_FA4": "0",
+   "FASTVIDEO_NVFP4_FA4": "0",
+   "FASTVIDEO_MINIMAX_H3_FA4_PACKED_VARLEN": "0",
+   "FASTVIDEO_MINIMAX_H3_FUSIONS": "all",
+   "FASTVIDEO_INFERENCE_TORCH_COMPILE": "1",
+   "FASTVIDEO_DISABLE_ATTENTION_COMPILE": "0",
+   "FASTVIDEO_VAE_PARALLEL_DECODE": "1",
+   "FASTVIDEO_VAE_PARALLEL_ENCODE": "0",
+   "FASTVIDEO_VAE_PARALLEL_DECODE_STRATEGY": "gather",
+   "FASTVIDEO_ULYSSES_A2A": "off",
+   "FASTVIDEO_STAGE_LOGGING": "1"
+  },
+  "warmup_s": 235.00136971473694,
+  "generation_time_s": [
+   13.78759980000001,
+   13.898107265000021,
+   13.944780122999987
+  ],
+  "e2e_median_s": 14.294240713119507,
+  "e2e_min_s": 14.194084882736206,
+  "e2e_all_s": [
+   14.194084882736206,
+   14.294240713119507,
+   14.350562572479248
+  ],
+  "realtime_factor": 0.9943819626517918,
+  "stages": {
+   "input_preparation_stage": {
+    "execution_time": 6.860799999230949e-05,
+    "timestamp": 1788123947.6052933,
+    "stage_class": "MiniMaxH3InputPreparationStage"
+   },
+   "conditioning_stage": {
+    "execution_time": 0.22675822500002596,
+    "timestamp": 1788123947.8323843,
+    "stage_class": "MiniMaxH3ConditioningStage",
+    "component_metric": "text_encoder_time_s"
+   },
+   "latent_preparation_stage": {
+    "execution_time": 0.08202851300001157,
+    "timestamp": 1788123947.9155483,
+    "stage_class": "MiniMaxH3LatentPreparationStage",
+    "component_metric": "vae_encode_time_s"
+   },
+   "denoising_stage": {
+    "execution_time": 9.86034867699999,
+    "timestamp": 1788123957.776888,
+    "stage_class": "MiniMaxH3DenoisingStage",
+    "component_metric": "dit_time_s"
+   },
+   "video_decoding_stage": {
+    "execution_time": 3.6418471730000306,
+    "timestamp": 1788123961.4198074,
+    "stage_class": "MiniMaxH3VideoDecodingStage",
+    "component_metric": "vae_decode_time_s"
+   },
+   "audio_decoding_stage": {
+    "execution_time": 0.11692660599999272,
+    "timestamp": 1788123961.537974,
+    "stage_class": "MiniMaxH3AudioDecodingStage",
+    "component_metric": "audio_decode_time_s"
+   },
+   "PostDecodeFrameProcessStage": {
+    "execution_time": 8.279999974547536e-07,
+    "timestamp": 1788123961.5479875
+   }
+  },
+  "video_paths": [],
+  "peak_vram_gb": 0.0,
+  "prompt_file": "/tmp/prompt_dance.txt",
+  "prompt_chars": 3221
+ },
+ {
+  "prompt_id": "pvar2_prompt_dance_B",
+  "frames": 345,
+  "steps": 5,
+  "backend": "VIDEO_SPARSE_ATTN_H3",
+  "sparsity": 0.9,
+  "lora": "",
+  "num_gpus": 8,
+  "compile_regional": true,
+  "sdpa_kernel": "default",
+  "quant": "bf16",
+  "te_quant": "bf16",
+  "model_path": "/weights/fasth3-syn1300-full",
+  "hardware": {
+   "name": "NVIDIA H200",
+   "hbm_gb": 150.1,
+   "capability": "9.0",
+   "count": 8
+  },
+  "offload_te": false,
+  "offload_vae": false,
+  "fsdp": true,
+  "load_s": 159.2005136013031,
+  "env": {
+   "FASTVIDEO_ATTENTION_BACKEND": "VIDEO_SPARSE_ATTN_H3",
+   "FASTVIDEO_VSA_SM100A": "0",
+   "FASTVIDEO_VSA_CUTEDSL": "0",
+   "FASTVIDEO_FA4": "0",
+   "FASTVIDEO_NVFP4_FA4": "0",
+   "FASTVIDEO_MINIMAX_H3_FA4_PACKED_VARLEN": "0",
+   "FASTVIDEO_MINIMAX_H3_FUSIONS": "all",
+   "FASTVIDEO_INFERENCE_TORCH_COMPILE": "1",
+   "FASTVIDEO_DISABLE_ATTENTION_COMPILE": "0",
+   "FASTVIDEO_VAE_PARALLEL_DECODE": "1",
+   "FASTVIDEO_VAE_PARALLEL_ENCODE": "0",
+   "FASTVIDEO_VAE_PARALLEL_DECODE_STRATEGY": "gather",
+   "FASTVIDEO_ULYSSES_A2A": "off",
+   "FASTVIDEO_STAGE_LOGGING": "1"
+  },
+  "generation_time_s": [
+   17.28923465600002,
+   13.87519563799998,
+   14.065726612999981
+  ],
+  "e2e_median_s": 14.458829879760742,
+  "e2e_min_s": 14.262399911880493,
+  "e2e_all_s": [
+   17.72036838531494,
+   14.262399911880493,
+   14.458829879760742
+  ],
+  "realtime_factor": 1.005831643809443,
+  "stages": {
+   "input_preparation_stage": {
+    "execution_time": 6.243699999686214e-05,
+    "timestamp": 1788123994.6335893,
+    "stage_class": "MiniMaxH3InputPreparationStage"
+   },
+   "conditioning_stage": {
+    "execution_time": 0.21646836000002168,
+    "timestamp": 1788123994.8506227,
+    "stage_class": "MiniMaxH3ConditioningStage",
+    "component_metric": "text_encoder_time_s"
+   },
+   "latent_preparation_stage": {
+    "execution_time": 0.07873320799996009,
+    "timestamp": 1788123994.9308646,
+    "stage_class": "MiniMaxH3LatentPreparationStage",
+    "component_metric": "vae_encode_time_s"
+   },
+   "denoising_stage": {
+    "execution_time": 9.952098168999953,
+    "timestamp": 1788124004.8839018,
+    "stage_class": "MiniMaxH3DenoisingStage",
+    "component_metric": "dit_time_s"
+   },
+   "video_decoding_stage": {
+    "execution_time": 3.686809628999981,
+    "timestamp": 1788124008.5717783,
+    "stage_class": "MiniMaxH3VideoDecodingStage",
+    "component_metric": "vae_decode_time_s"
+   },
+   "audio_decoding_stage": {
+    "execution_time": 0.11663082100005795,
+    "timestamp": 1788124008.689095,
+    "stage_class": "MiniMaxH3AudioDecodingStage",
+    "component_metric": "audio_decode_time_s"
+   },
+   "PostDecodeFrameProcessStage": {
+    "execution_time": 1.13999999484804e-06,
+    "timestamp": 1788124008.6973658
+   }
+  },
+  "video_paths": [],
+  "peak_vram_gb": 0.0,
+  "prompt_file": "/tmp/prompt_dance_B.txt",
+  "prompt_chars": 2607
+ },
+ {
+  "prompt_id": "pvar2_prompt_dance_C",
+  "frames": 345,
+  "steps": 5,
+  "backend": "VIDEO_SPARSE_ATTN_H3",
+  "sparsity": 0.9,
+  "lora": "",
+  "num_gpus": 8,
+  "compile_regional": true,
+  "sdpa_kernel": "default",
+  "quant": "bf16",
+  "te_quant": "bf16",
+  "model_path": "/weights/fasth3-syn1300-full",
+  "hardware": {
+   "name": "NVIDIA H200",
+   "hbm_gb": 150.1,
+   "capability": "9.0",
+   "count": 8
+  },
+  "offload_te": false,
+  "offload_vae": false,
+  "fsdp": true,
+  "load_s": 159.2005136013031,
+  "env": {
+   "FASTVIDEO_ATTENTION_BACKEND": "VIDEO_SPARSE_ATTN_H3",
+   "FASTVIDEO_VSA_SM100A": "0",
+   "FASTVIDEO_VSA_CUTEDSL": "0",
+   "FASTVIDEO_FA4": "0",
+   "FASTVIDEO_NVFP4_FA4": "0",
+   "FASTVIDEO_MINIMAX_H3_FA4_PACKED_VARLEN": "0",
+   "FASTVIDEO_MINIMAX_H3_FUSIONS": "all",
+   "FASTVIDEO_INFERENCE_TORCH_COMPILE": "1",
+   "FASTVIDEO_DISABLE_ATTENTION_COMPILE": "0",
+   "FASTVIDEO_VAE_PARALLEL_DECODE": "1",
+   "FASTVIDEO_VAE_PARALLEL_ENCODE": "0",
+   "FASTVIDEO_VAE_PARALLEL_DECODE_STRATEGY": "gather",
+   "FASTVIDEO_ULYSSES_A2A": "off",
+   "FASTVIDEO_STAGE_LOGGING": "1"
+  },
+  "generation_time_s": [
+   16.69685118399991,
+   13.768475081999895,
+   13.945860252999978
+  ],
+  "e2e_median_s": 14.331970691680908,
+  "e2e_min_s": 14.156427145004272,
+  "e2e_all_s": [
+   17.089025735855103,
+   14.156427145004272,
+   14.331970691680908
+  ],
+  "realtime_factor": 0.9970066568125849,
+  "stages": {
+   "input_preparation_stage": {
+    "execution_time": 6.366799993884342e-05,
+    "timestamp": 1788124041.17068,
+    "stage_class": "MiniMaxH3InputPreparationStage"
+   },
+   "conditioning_stage": {
+    "execution_time": 0.1984743379999827,
+    "timestamp": 1788124041.3695664,
+    "stage_class": "MiniMaxH3ConditioningStage",
+    "component_metric": "text_encoder_time_s"
+   },
+   "latent_preparation_stage": {
+    "execution_time": 0.0784852189999583,
+    "timestamp": 1788124041.4518402,
+    "stage_class": "MiniMaxH3LatentPreparationStage",
+    "component_metric": "vae_encode_time_s"
+   },
+   "denoising_stage": {
+    "execution_time": 9.889654717999974,
+    "timestamp": 1788124051.3432827,
+    "stage_class": "MiniMaxH3DenoisingStage",
+    "component_metric": "dit_time_s"
+   },
+   "video_decoding_stage": {
+    "execution_time": 3.6431393320000325,
+    "timestamp": 1788124054.9875712,
+    "stage_class": "MiniMaxH3VideoDecodingStage",
+    "component_metric": "vae_decode_time_s"
+   },
+   "audio_decoding_stage": {
+    "execution_time": 0.11644920300000194,
+    "timestamp": 1788124055.1057298,
+    "stage_class": "MiniMaxH3AudioDecodingStage",
+    "component_metric": "audio_decode_time_s"
+   },
+   "PostDecodeFrameProcessStage": {
+    "execution_time": 1.034000092658971e-06,
+    "timestamp": 1788124055.1144378
+   }
+  },
+  "video_paths": [],
+  "peak_vram_gb": 0.0,
+  "prompt_file": "/tmp/prompt_dance_C.txt",
+  "prompt_chars": 1869
+ }
+]

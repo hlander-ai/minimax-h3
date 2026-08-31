@@ -1,0 +1,98 @@
+{
+ "prompt_id": "fasth3_vsa90",
+ "frames": 345,
+ "steps": 5,
+ "backend": "VIDEO_SPARSE_ATTN_H3",
+ "sparsity": 0.9,
+ "lora": "vsa-datafree",
+ "num_gpus": 8,
+ "compile_regional": true,
+ "sdpa_kernel": "default",
+ "quant": "bf16",
+ "load_s": 241.81387639045715,
+ "env": {
+  "FASTVIDEO_ATTENTION_BACKEND": "VIDEO_SPARSE_ATTN_H3",
+  "FASTVIDEO_VSA_SM100A": "0",
+  "FASTVIDEO_VSA_CUTEDSL": "0",
+  "FASTVIDEO_FA4": "0",
+  "FASTVIDEO_NVFP4_FA4": "0",
+  "FASTVIDEO_MINIMAX_H3_FA4_PACKED_VARLEN": "0",
+  "FASTVIDEO_MINIMAX_H3_FUSIONS": "all",
+  "FASTVIDEO_INFERENCE_TORCH_COMPILE": "1",
+  "FASTVIDEO_DISABLE_ATTENTION_COMPILE": "0",
+  "FASTVIDEO_VAE_PARALLEL_DECODE": "1",
+  "FASTVIDEO_VAE_PARALLEL_ENCODE": "0",
+  "FASTVIDEO_VAE_PARALLEL_DECODE_STRATEGY": "gather",
+  "FASTVIDEO_ULYSSES_A2A": "off",
+  "FASTVIDEO_STAGE_LOGGING": "1"
+ },
+ "warmup_s": 221.3536295890808,
+ "generation_time_s": [
+  20.85130080999994,
+  20.66737013000011,
+  20.497031133000064
+ ],
+ "e2e_median_s": 23.810007572174072,
+ "e2e_min_s": 23.596718549728394,
+ "e2e_all_s": [
+  23.90660858154297,
+  23.810007572174072,
+  23.596718549728394
+ ],
+ "realtime_factor": 1.656348352846892,
+ "stages": {
+  "input_preparation_stage": {
+   "execution_time": 7.584200000110286e-05,
+   "timestamp": 1788081343.96155,
+   "stage_class": "MiniMaxH3InputPreparationStage"
+  },
+  "conditioning_stage": {
+   "execution_time": 1.8237553559999924,
+   "timestamp": 1788081345.7858026,
+   "stage_class": "MiniMaxH3ConditioningStage",
+   "component_metric": "text_encoder_time_s"
+  },
+  "latent_preparation_stage": {
+   "execution_time": 0.05563241300001209,
+   "timestamp": 1788081345.8423674,
+   "stage_class": "MiniMaxH3LatentPreparationStage",
+   "component_metric": "vae_encode_time_s"
+  },
+  "denoising_stage": {
+   "execution_time": 8.855193299000007,
+   "timestamp": 1788081354.698602,
+   "stage_class": "MiniMaxH3DenoisingStage",
+   "component_metric": "dit_time_s"
+  },
+  "video_decoding_stage": {
+   "execution_time": 7.000750241999981,
+   "timestamp": 1788081361.7002165,
+   "stage_class": "MiniMaxH3VideoDecodingStage",
+   "component_metric": "vae_decode_time_s"
+  },
+  "audio_decoding_stage": {
+   "execution_time": 0.36911880399998154,
+   "timestamp": 1788081362.3196025,
+   "stage_class": "MiniMaxH3AudioDecodingStage",
+   "component_metric": "audio_decode_time_s"
+  },
+  "PostDecodeFrameProcessStage": {
+   "execution_time": 1.4010049529999833,
+   "timestamp": 1788081365.8582458
+  },
+  "VideoSaveStage": {
+   "execution_time": 1.6878416530000777,
+   "timestamp": 1788081367.5465746
+  },
+  "AudioMuxStage": {
+   "execution_time": 0.0,
+   "timestamp": 1788081367.5466402
+  }
+ },
+ "video_paths": [
+  "/outputs/fasth3_vsa90_r0/A traceur sprints across a rooftop and vaults a concrete ledge, tucking into a roll and rising into.mp4",
+  "/outputs/fasth3_vsa90_r1/A traceur sprints across a rooftop and vaults a concrete ledge, tucking into a roll and rising into.mp4",
+  "/outputs/fasth3_vsa90_r2/A traceur sprints across a rooftop and vaults a concrete ledge, tucking into a roll and rising into.mp4"
+ ],
+ "peak_vram_gb": 0.0
+}

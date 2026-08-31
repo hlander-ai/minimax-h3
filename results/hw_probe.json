@@ -1,0 +1,232 @@
+{
+ "import_to_start_s": 2.97,
+ "nvidia_smi_topo": "\t\u001b[4mGPU0\tGPU1\tGPU2\tGPU3\tGPU4\tGPU5\tGPU6\tGPU7\tCPU Affinity\tNUMA Affinity\tGPU NUMA ID\u001b[0m\nFailed to run topology matrix\n\n",
+ "nvidia_smi": "name, memory.total [MiB], driver_version, pcie.link.gen.max, clocks.max.sm [MHz]\nNVIDIA H200, 143771 MiB, 580.95.05, 5, 1980 MHz\nNVIDIA H200, 143771 MiB, 580.95.05, 5, 1980 MHz\nNVIDIA H200, 143771 MiB, 580.95.05, 5, 1980 MHz\nNVIDIA H200, 143771 MiB, 580.95.05, 5, 1980 MHz\nNVIDIA H200, 143771 MiB, 580.95.05, 5, 1980 MHz\nNVIDIA H200, 143771 MiB, 580.95.05, 5, 1980 MHz\nNVIDIA H200, 143771 MiB, 580.95.05, 5, 1980 MHz\nNVIDIA H200, 143771 MiB, 580.95.05, 5, 1980 MHz\n",
+ "torch_version": "2.8.0+cu128",
+ "cuda_version": "12.8",
+ "device_count": 8,
+ "device_name": "NVIDIA H200",
+ "sm_count": 132,
+ "capability": "9.0",
+ "hbm_gb": 150.1,
+ "nvlink_status": "GPU 0: NVIDIA H200 (UUID: GPU-<redacted>)\n\t Link 0: 26.562 GB/s\n\t Link 1: 26.562 GB/s\n\t Link 2: 26.562 GB/s\n\t Link 3: 26.562 GB/s\n\t Link 4: 26.562 GB/s\n\t Link 5: 26.562 GB/s\n\t Link 6: 26.562 GB/s\n\t Link 7: 26.562 GB/s\n\t Link 8: 26.562 GB/s\n\t Link 9: 26.562 GB/s\n\t Link 10: 26.562 GB/s\n\t Link 11: 26.562 GB/s\n\t Link 12: 26.562 GB/s\n\t Link 13: 26.562 GB/s\n\t Link 14: 26.562 GB/s\n\t Link 15: 26.562 GB/s\n\t Link 16: 26.562 GB/s\n\t Link 17: 26.562 GB/s\nGPU 1: NVIDIA H200 (UUID: GPU-<redacted>)\n\t Link 0: 26.562 GB/s\n\t Link 1: 26.562 GB/s\n\t Link 2: 26.562 GB/s\n\t Link 3: 26.562 GB/s\n\t Link 4: 26.562 GB/s\n\t Link 5: 26.562 GB/s\n\t Link 6: 26.562 GB/s\n\t Link 7: 26.562 GB/s\n\t Link 8: 26.562 GB/s\n\t Link 9: 26.562 GB/s\n\t Link 10: 26.562 GB/s\n\t Link 11: 26.562 GB/s\n\t Link 12: 26.562 GB/s\n\t Link 13: 26.562 GB/s\n\t Link 14: 26.562 GB/s\n\t Link 15: 26.562 GB/s\n\t Link 16: 26.562 GB/s\n\t Link 17: 26.562 GB/s\nGPU 2: NVIDIA H200 (UUID: GPU-<redacted>)\n\t Link 0: 26.562 GB/s\n\t Link 1: 26.562 GB/s\n\t Link 2: 26.562 GB/s\n\t Link 3: 26.562 GB/s\n\t Link 4: 26.562 GB/s\n\t Link 5: 26.562 GB/s\n\t Link 6: 26.562 GB/s\n\t Link 7: 26.562 GB/s\n\t Link 8: 26.562 GB/s\n\t Link 9: 26.562 GB/s\n\t Link 10: 26.562 GB/s\n\t Link 11: 26.562 GB/s\n\t Link 12: 26.562 GB/s\n\t Link 13: 26.562 GB/s\n\t Link 14: 26.562 GB/s\n\t Link 15: 26.562 GB/s\n\t Link 16: 26.562 GB/s\n\t Link 17: 26.562 GB/s\nGPU 3: NVIDIA H200 (UUID: GPU-<redacted>)\n\t Link 0: 26.562 GB/s\n\t Link 1: 26.562 GB/s\n\t Link 2: 26.562 GB/s\n\t Link 3: 26.562 GB/s\n\t Link 4: 26.562 GB/s\n\t Link 5: 26.562 GB/s\n\t Link 6: 26.562 GB/s\n\t Link 7: 26.562 GB/s\n\t Link 8: 26.562 GB/s\n\t Link 9: 26.562 GB/s\n\t Link 10: 26.562 GB/s\n\t Link 11: 26.562 GB/s\n\t Link 12: 26.562 GB/s\n\t Link 13: 26.562 GB/s\n\t Link 14: 26.562 GB/s\n\t Link 15: 26.562 GB/s\n\t Link 16: 26.562 GB/s\n\t Link 17: 26.562 GB/s\nGPU 4: NVIDIA H200 (UUID: GPU-<redacted>)\n\t Link 0: 26.562 GB/s\n\t Link 1: 26.562 GB/s\n\t Link 2: 26.562 GB/s\n\t Link 3: 26.562 GB/s\n\t Link 4: 26.562 GB/s\n\t Link 5: 26.562 GB/s\n\t Link 6: 26.562 GB/s\n\t Link 7: 26.562 GB/s\n\t Link 8: 26.562 GB/s\n\t Link 9: 26.562 GB/s\n\t Link 10: 26.562 GB/s\n\t Link 11: 26.562 GB/s\n\t Link 12: 26.562 GB/s\n\t Link 13: 26.562 GB/s\n\t Link 14: 26.562 GB/s\n\t Link 15: 26.562 GB/s\n\t Link 16: 26.562 GB/s\n\t Link 17: 26.562 GB/s\nGPU 5: NVIDIA H200 (UUID: GPU-<redacted>)\n\t Link 0: 26.562 GB/s\n\t Link 1: 26.562 GB/s\n\t Link 2: 26.562 GB/s\n\t Link 3: 26.562 GB/s\n\t Link 4: 26.562 GB/s\n\t Link 5: 26.562 GB/s\n\t Link 6: 26.562 GB/s\n\t Link 7: 26.562 GB/s\n\t Link 8: 26.562 GB/s\n\t Link 9: 26.562 GB/s\n\t Link 10: 26.562 GB/s\n\t Link 11: 26.562 GB/s\n\t Link 12: 26.562 GB/s\n\t Link 13: 26.562 GB/s\n\t Link 14: 26.562 GB/s\n\t Link 15: 26.562 GB/s\n\t Link 16: 26.562 GB/s\n\t Link 17: 26.562 GB/s\nGPU 6: NVIDIA H200 (UUID: GPU-<redacted>)\n\t Link 0: 26.562 GB/s\n\t Link 1: 26.562 GB/s\n\t Link 2: 26.562 GB/s\n\t Link 3: 26.562 GB/s\n\t Link 4: 26.562 GB/s\n\t Link 5: 26.562 GB/s\n\t Link 6: 26.562 GB/s\n\t Link 7: 26.562 GB/s\n\t Link 8: 26.562 GB/s\n\t Link 9: 26.562 GB/s\n\t Link 10: 26.562 GB/s\n\t Link 11: 26.562 GB/s\n\t Link 12: 26.562 GB/s\n\t Link 13: 26.562 GB/s\n\t Link 14: 26.562 GB/s\n\t Link 15: 26.562 GB/s\n\t Link 16: 26.562 GB/s\n\t Link 17: 26.562 GB/s\nGPU 7: NVIDIA H200 (UUID: GPU-<redacted>)\n\t Link 0: 26.562 GB/s\n\t Link 1: 26.562 GB/s\n\t Link 2: 26.562 GB/s\n\t Link 3: 26.562 GB/s\n\t Link 4: 26.562 GB/s\n\t Link 5: 26.562 GB/s\n\t Link 6: 26.562 GB/s\n\t Link 7: 26.562 GB/s\n\t Link 8: 26.562 GB/s\n\t Link 9: 26.562 GB/s\n\t Link 10: 26.562 GB/s\n\t Link 11: 26.562 GB/s\n\t Link 12: 26.562 GB/s\n\t Link 13: 26.562 GB/s\n\t Link 14: 26.562 GB/s\n\t Link 15: 26.562 GB/s\n\t Link 16: 26.562 GB/s\n\t Link 17: 26.562 GB/s\n",
+ "cuda_init_s": 0.23,
+ "bf16_gemm": [
+  {
+   "tag": "qkv_proj",
+   "m": 32768,
+   "k": 7168,
+   "n": 21504,
+   "ms": 14.302,
+   "tflops": 706.3
+  },
+  {
+   "tag": "out_proj",
+   "m": 32768,
+   "k": 7168,
+   "n": 7168,
+   "ms": 4.732,
+   "tflops": 711.6
+  },
+  {
+   "tag": "mlp_up",
+   "m": 32768,
+   "k": 7168,
+   "n": 28672,
+   "ms": 19.029,
+   "tflops": 707.8
+  },
+  {
+   "tag": "mlp_down",
+   "m": 32768,
+   "k": 28672,
+   "n": 7168,
+   "ms": 19.096,
+   "tflops": 705.3
+  },
+  {
+   "tag": "square_8k",
+   "m": 16384,
+   "k": 8192,
+   "n": 8192,
+   "ms": 3.176,
+   "tflops": 692.4
+  },
+  {
+   "tag": "tall_8k",
+   "m": 65536,
+   "k": 8192,
+   "n": 8192,
+   "ms": 13.279,
+   "tflops": 662.4
+  }
+ ],
+ "bf16_peak_tflops_measured": 711.6,
+ "bf16_mfu_vs_spec": 0.719,
+ "fp8_gemm": [
+  {
+   "tag": "qkv_proj",
+   "ms": 7.66,
+   "tflops": 1318.7
+  },
+  {
+   "tag": "mlp_down",
+   "ms": 10.489,
+   "tflops": 1284.1
+  }
+ ],
+ "fp8_speedup_vs_bf16": 1.85,
+ "hbm_copy_gbps": 3511.2,
+ "hbm_elementwise_gbps": 3866.6,
+ "attention_sweep": [
+  {
+   "seq": 16384,
+   "heads": 7,
+   "ms": 2.88,
+   "tflops": 333.5
+  },
+  {
+   "seq": 16384,
+   "heads": 56,
+   "ms": 21.05,
+   "tflops": 365.6
+  },
+  {
+   "seq": 32768,
+   "heads": 7,
+   "ms": 10.86,
+   "tflops": 354.2
+  },
+  {
+   "seq": 32768,
+   "heads": 56,
+   "ms": 85.84,
+   "tflops": 358.6
+  },
+  {
+   "seq": 65536,
+   "heads": 7,
+   "ms": 44.48,
+   "tflops": 346.0
+  },
+  {
+   "seq": 65536,
+   "heads": 56,
+   "ms": 346.81,
+   "tflops": 355.1
+  },
+  {
+   "seq": 131072,
+   "heads": 7,
+   "ms": 174.58,
+   "tflops": 352.7
+  },
+  {
+   "seq": 131072,
+   "heads": 56,
+   "ms": 1393.27,
+   "tflops": 353.5
+  },
+  {
+   "seq": 262144,
+   "heads": 7,
+   "ms": 695.49,
+   "tflops": 354.1
+  },
+  {
+   "seq": 262144,
+   "heads": 56,
+   "ms": 5802.69,
+   "tflops": 339.6
+  },
+  {
+   "seq": 393216,
+   "heads": 7,
+   "ms": 1570.26,
+   "tflops": 352.9
+  },
+  {
+   "seq": 393216,
+   "heads": 56,
+   "ms": 13350.05,
+   "tflops": 332.1
+  }
+ ],
+ "nccl": {
+  "all_reduce_16MB": {
+   "ms": 0.131,
+   "algo_gbps": 208.6
+  },
+  "all_gather_16MB": {
+   "ms": 0.067
+  },
+  "reduce_scatter_16MB": {
+   "ms": 0.069
+  },
+  "all_to_all_16MB": {
+   "ms": 0.071,
+   "eff_gbps": 193.0
+  },
+  "all_reduce_64MB": {
+   "ms": 0.319,
+   "algo_gbps": 342.9
+  },
+  "all_gather_64MB": {
+   "ms": 0.205
+  },
+  "reduce_scatter_64MB": {
+   "ms": 0.201
+  },
+  "all_to_all_64MB": {
+   "ms": 0.21,
+   "eff_gbps": 260.0
+  },
+  "all_reduce_256MB": {
+   "ms": 1.057,
+   "algo_gbps": 414.0
+  },
+  "all_gather_256MB": {
+   "ms": 0.718
+  },
+  "reduce_scatter_256MB": {
+   "ms": 0.717
+  },
+  "all_to_all_256MB": {
+   "ms": 0.746,
+   "eff_gbps": 293.3
+  },
+  "all_reduce_512MB": {
+   "ms": 2.042,
+   "algo_gbps": 428.6
+  },
+  "all_gather_512MB": {
+   "ms": 1.392
+  },
+  "reduce_scatter_512MB": {
+   "ms": 1.395
+  },
+  "all_to_all_512MB": {
+   "ms": 1.445,
+   "eff_gbps": 302.7
+  },
+  "all_reduce_1024MB": {
+   "ms": 4.039,
+   "algo_gbps": 433.3
+  },
+  "all_gather_1024MB": {
+   "ms": 2.735
+  },
+  "reduce_scatter_1024MB": {
+   "ms": 2.735
+  },
+  "all_to_all_1024MB": {
+   "ms": 2.825,
+   "eff_gbps": 309.7
+  },
+  "p2p_512MB": {
+   "ms": 1.46,
+   "gbps": 342.4
+  }
+ },
+ "_wallclock_including_coldstart_s": 199.6
+}

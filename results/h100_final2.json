@@ -1,0 +1,47 @@
+[
+ {
+  "config": {
+   "sparsity": 0.9,
+   "dense_first_n": 0,
+   "label": "H100_FP8TE_RESIDENT"
+  },
+  "prompt_id": "parkour",
+  "tag": "H100_FP8TE_RESIDENT__sp90_df0_parkour",
+  "hardware": {
+   "name": "NVIDIA H100 80GB HBM3",
+   "hbm_gb": 85.0,
+   "capability": "9.0",
+   "count": 8
+  },
+  "frames": 345,
+  "steps": 5,
+  "sparsity": 0.9,
+  "lora": "",
+  "backend": "VIDEO_SPARSE_ATTN_H3",
+  "num_gpus": 8,
+  "video_path": "/outputs/H100_FP8TE_RESIDENT__sp90_df0_parkour_r2/A traceur sprints across a rooftop and vaults a concrete ledge, tucking into a roll and rising into_2.mp4",
+  "generation_time_s": [
+   12.917716599000016,
+   12.952670927999975,
+   13.099441887000012
+  ],
+  "stages": {
+   "input_preparation_stage": 6.117800000993157e-05,
+   "conditioning_stage": 0.17968125800001644,
+   "latent_preparation_stage": 0.1174402020000116,
+   "denoising_stage": 9.371220241000003,
+   "video_decoding_stage": 2.62846439599997,
+   "audio_decoding_stage": 0.12445277200004057,
+   "PostDecodeFrameProcessStage": 0.2388745750000112,
+   "VideoSaveStage": 1.5034131010000351,
+   "AudioMuxStage": 0.0
+  },
+  "e2e_median_s": 14.693596463999995,
+  "e2e_all_s": [
+   14.649264428000038,
+   14.693596463999995,
+   14.849864846000003
+  ],
+  "realtime_factor": 1.0221632322782606
+ }
+]

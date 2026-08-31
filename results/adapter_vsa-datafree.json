@@ -1,0 +1,72 @@
+[
+ {
+  "config": {
+   "sparsity": 0.9,
+   "dense_first_n": 0,
+   "label": "adapter_vsa-datafree"
+  },
+  "prompt_id": "parkour",
+  "tag": "adapter_vsa-datafree__sp90_df0_parkour",
+  "frames": 345,
+  "steps": 5,
+  "sparsity": 0.9,
+  "lora": "vsa-datafree",
+  "backend": "VIDEO_SPARSE_ATTN_H3",
+  "num_gpus": 8,
+  "video_path": "/outputs/adapter_vsa-datafree__sp90_df0_parkour_r0/A traceur sprints across a rooftop and vaults a concrete ledge, tucking into a roll and rising into.mp4",
+  "generation_time_s": [
+   13.096692650999955
+  ],
+  "stages": {
+   "input_preparation_stage": 8.968999998160143e-05,
+   "conditioning_stage": 0.041998214999978245,
+   "latent_preparation_stage": 0.0529179860000113,
+   "denoising_stage": 9.584142666000048,
+   "video_decoding_stage": 2.525516358999994,
+   "audio_decoding_stage": 0.11694100900001558,
+   "PostDecodeFrameProcessStage": 0.2661681220000105,
+   "VideoSaveStage": 1.6933750800000098,
+   "AudioMuxStage": 0.0
+  },
+  "e2e_median_s": 15.065899317999992,
+  "e2e_all_s": [
+   15.065899317999992
+  ],
+  "realtime_factor": 1.0480625612521735
+ },
+ {
+  "config": {
+   "sparsity": 0.9,
+   "dense_first_n": 0,
+   "label": "adapter_vsa-datafree"
+  },
+  "prompt_id": "texture",
+  "tag": "adapter_vsa-datafree__sp90_df0_texture",
+  "frames": 345,
+  "steps": 5,
+  "sparsity": 0.9,
+  "lora": "vsa-datafree",
+  "backend": "VIDEO_SPARSE_ATTN_H3",
+  "num_gpus": 8,
+  "video_path": "/outputs/adapter_vsa-datafree__sp90_df0_texture_r0/Macro shot of sunlight moving across a woven wool blanket as a cloud passes. Individual fibers and s.mp4",
+  "generation_time_s": [
+   14.583197459000019
+  ],
+  "stages": {
+   "input_preparation_stage": 6.699800002252232e-05,
+   "conditioning_stage": 0.04673050299999204,
+   "latent_preparation_stage": 0.05692596199997979,
+   "denoising_stage": 11.013666005999994,
+   "video_decoding_stage": 2.565516607999996,
+   "audio_decoding_stage": 0.11585758499995791,
+   "PostDecodeFrameProcessStage": 0.2698499530000049,
+   "VideoSaveStage": 1.7308286129999715,
+   "AudioMuxStage": 0.0
+  },
+  "e2e_median_s": 16.593719205000014,
+  "e2e_all_s": [
+   16.593719205000014
+  ],
+  "realtime_factor": 1.154345683826088
+ }
+]
