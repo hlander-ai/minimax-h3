@@ -14,25 +14,7 @@ doesn't need to be, and **93% of the win came from outside the model.**
 Three warm runs: 13.503 / 13.506 / 13.554 s, σ = 0.03. Loading and compilation excluded,
 matching FastVideo's reporting protocol.
 
-## Read this first
-
-**No quality claim here is established.** An earlier version of this work ranked adapters
-with reference-based metrics against Base H3. That comparison is invalid: a 49-step dense
-sampler and a 4-step DMD sampler map identical noise to *different trajectories*, so the
-same seed yields a different video, not a degraded one. DMD2 trains the student to match
-the teacher's distribution, never its per-sample output. Every claim resting on that —
-adapter rankings, LPIPS/SSIM/PSNR vs base, the "motion energy preserved" figures — is
-**retracted in full**.
-
-Absolute metrics can't rescue it either: they're confounded by scene content, and the two
-motion estimators disagree in *direction* (RAFT 0.756× vs Farneback 1.31× on the same
-pair). The only structurally valid instrument used was CLIP text similarity, at n=1 prompt
-— direction only.
-
-Settling it needs distribution-level metrics (FVD/FAD over many samples) or blinded
-pairwise preference. `eval/prompts/suite_v1.json` was built for that and has not been run.
-
-## Where the time actually went
+## Inference Time Breakdown
 
 | Stage | FastH3 stock | optimized | Δ | what it was |
 |---|---:|---:|---:|---|
@@ -52,7 +34,7 @@ blew the budget.
 The first three rows are costs every FastH3 user pays **on any hardware, Blackwell
 included.**
 
-## `patches/` — the part worth taking
+## `patches/`
 
 Runtime patches against [FastVideo](https://github.com/hao-ai-lab/FastVideo), pinned to
 upstream commit [`b2db0c0`](https://github.com/hao-ai-lab/FastVideo/commit/b2db0c0a137e).
@@ -156,9 +138,6 @@ Hao AI Lab's [FastH3 preview](https://haoailab.com/blogs/fasth3-preview/) report
 on 8×B200 under the same protocol. **They are 4.9% faster than this work, on 2.3× the
 silicon per GPU**, with FlashAttention-4 and a sparse kernel that doesn't exist on Hopper.
 This is not a speedup over them and should never be cited as one.
-
-The narrower claim is the useful one: their published numbers are all Blackwell, the
-natural reading is that sub-real-time H3 requires Blackwell, and that inference is false.
 
 ## License and scope
 
